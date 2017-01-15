@@ -1,0 +1,21 @@
+<h1>MiniBlog</h1>
+
+<%= form_for :post, url: posts_path do |f| %>
+  <p>
+    <%= f.label 'Post something' %><br>
+    <%= f.text_area :text %>
+  </p>
+
+  <%= button_to 'Public' %>
+<% end %>
+
+<% @posts.reverse.each do |post| %>
+  <p>
+    <%= post.text %>
+  </p>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <p>
+    <%= time_ago_in_words post.created_at %> ago
+  </p>
+<% end %>
