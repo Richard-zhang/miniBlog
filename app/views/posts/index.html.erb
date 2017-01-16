@@ -1,6 +1,7 @@
 <h1>MiniBlog</h1>
 
-<%= form_for :post, url: posts_path do |f| %>
+<span class="redText"><%= error %></span>
+<%= form_for @post do |f| %>
   <p>
     <%= f.label 'Post something' %><br>
     <%= f.text_area :text %>
