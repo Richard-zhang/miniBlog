@@ -13,7 +13,7 @@
   <%= button_to 'Publish' %>
 <% end %>
 
-<% @posts.reverse.each do |post| %>
+<% @posts.each do |post| %>
   <p>
     <%= simple_format(post.text.html_safe) %>
   <p>
