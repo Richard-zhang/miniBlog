@@ -10,7 +10,7 @@
     <%= f.text_area :text %>
   </p>
 
-  <%= button_to 'Public' %>
+  <%= button_to 'Publish' %>
 <% end %>
 
 
@@ -18,9 +18,7 @@
   <p>
     <%= post.text %>
   </p>
-  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'Show', post %>
   <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <p>
-    <%= time_ago_in_words post.created_at %> ago
-  </p>
+  <%= time_ago_in_words post.created_at %> ago
 <% end %>

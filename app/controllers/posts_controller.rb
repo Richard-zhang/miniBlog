@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
   def create
     @post = Post.new(post_param)
     if @post.save
@@ -15,15 +16,6 @@ class PostsController < ApplicationController
     else
       redirect_to root_url, error: @post.errors.full_messages.join("<br/>")
     end
-    #respond_to do |format|
-    #  if @post.save
-    #    format.html { redirect_to root_url, notice: 'MiniBlog was successfully created.' }
-    #  else
-    #    format.html { redirect_to root_url, notice: 'MiniBlog was failed' }
-    #    # format.html { render :index }
-    #    # format.json { render json: @post.errors, status: :unprocessable_entity }
-    #  end
-    #end
   end
 
   def destroy
@@ -33,7 +25,9 @@ class PostsController < ApplicationController
     redirect_to root_url, notice: "The post has been deleted"
   end
 
+
   def show
+    @post = Post.find(params[:id])
   end
 
 private
