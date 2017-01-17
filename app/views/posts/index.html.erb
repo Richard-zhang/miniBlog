@@ -3,10 +3,9 @@
 <%= notice %>
 <span class="redText"><%= error %></span>
 
-
 <%= form_for @post do |f| %>
   <p>
-    <%= f.label :text %><br>
+    <%= f.label 'Post Something' %><br>
     <%= f.text_area :text %>
   </p>
 

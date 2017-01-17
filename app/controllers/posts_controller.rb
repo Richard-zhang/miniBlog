@@ -1,5 +1,5 @@
+# Post controller
 class PostsController < ApplicationController
-
   def index
     @posts = Post.all
     @post = Post.new
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_url
     else
-      redirect_to root_url, error: @post.errors.full_messages.join("<br/>")
+      redirect_to root_url, error: @post.errors.full_messages.join('<br/>')
     end
   end
 
@@ -22,15 +22,15 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to root_url, notice: "The post has been deleted"
+    redirect_to root_url, notice: 'The post has been deleted'
   end
-
 
   def show
     @post = Post.find(params[:id])
   end
 
-private
+  private
+
   def post_param
     params.require(:post).permit(:text)
   end
