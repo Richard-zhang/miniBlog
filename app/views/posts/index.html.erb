@@ -13,11 +13,10 @@
   <%= button_to 'Publish' %>
 <% end %>
 
-
 <% @posts.reverse.each do |post| %>
   <p>
-    <%= post.text %>
-  </p>
+    <%= simple_format(post.text.html_safe) %>
+  <p>
   <%= link_to 'Show', post %>
   <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
   <%= time_ago_in_words post.created_at %> ago
