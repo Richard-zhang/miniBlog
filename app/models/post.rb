@@ -1,7 +1,4 @@
 class Post < ApplicationRecord
-  validates :text, presence: { message: 'must not be empty' },
-                   length: {
-                             maximum: 150,
-                             too_long: 'must have at most 150 characters'
-                            }
+  validates_presence_of :text, message: 'must not be empty'
+  validates_length_of :text, maximum: 150, too_long: 'must have at most 150 characters'
 end
