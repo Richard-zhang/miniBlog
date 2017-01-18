@@ -10,7 +10,7 @@ cd miniBlog
 bundle install
 ```
 
-## Run the app
+## Run it
 ```
 cd miniBlog/
 rake db:migrate
@@ -18,7 +18,7 @@ bin/rails server
 ```
 Open the default browser (suggested: Chrome, Firefox and Safari), and type **localhost:3000** in the address bar.
 
-## Testing
+## Test it
 To test all the test cases
 ```
 rspec
@@ -33,4 +33,10 @@ rspec spec/features/
 ```
 
 ## Screenshot
-
+![1](screenshots/1.png)
+![2](screenshots/2.png)
+![3](screenshots/3.png)
+![4](screenshots/4.png)
+![5](screenshots/5.png)
+![6](screenshots/6.png)
+![7](screenshots/7.png)
