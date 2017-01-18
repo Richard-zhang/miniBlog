@@ -5,6 +5,7 @@ feature 'User posts a blog' do
     visit '/'
     fill_in 'post_text', with: 'My First Post'
     click_button 'Publish'
+    page.should have_content 'My First Post'
   end
 
   scenario 'with empty input' do
